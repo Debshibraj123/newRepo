@@ -17,11 +17,11 @@ const links = [
     title: "Portfolio",
     url: "/portfolio",
   },
-  {
-    id: 3,
-    title: "Blog",
-    url: "/blog",
-  },
+  // {
+  //   id: 3,
+  //   title: "Blog",
+  //   url: "/blog",
+  // },
   {
     id: 4,
     title: "About",
