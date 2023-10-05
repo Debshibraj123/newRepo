@@ -1,8 +1,10 @@
+/* Default styles for larger screens */
 .container {
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px; /* Add some horizontal padding */
 }
 
 .logo {
@@ -17,10 +19,113 @@
 }
 
 .logout {
-  padding: 5px;
+  padding: 5px 10px; /* Increase padding for better touch interaction on small screens */
   border: none;
   background-color: #53c28b;
   color: white;
   cursor: pointer;
   border-radius: 3px;
+}
+
+/* Media query for screens smaller than 768px (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Remove fixed height */
+    padding: 20px; /* Add some padding to all sides */
+  }
+
+  .logo {
+    margin-bottom: 20px; /* Add space below logo */
+    font-size: 18px; /* Decrease font size for smaller screens */
+  }
+
+  .links {
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-start; /* Align links to the left */
+    gap: 10px; /* Reduce gap between links */
+  }
+
+  .logout {
+    padding: 10px 20px; /* Increase padding for better touch interaction */
+  }
+}
+
+.hamburger {
+  display: none; /* Initially hide the hamburger on larger screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: #333;
+  transition: 0.4s;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile menu styles */
+.links.open {
+  display: block;
+  width: 100vw;
+  height: 150vh;
+  overflow: hidden;
+}
+
+/* Media query for screens smaller than 768px (e.g., mobile devices) */
+@media (max-width: 768px) {
+  /* Hamburger menu icon visible on small screens */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide links initially on small screens */
+  .links {
+    display: none;
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-start; /* Align links to the left */
+    gap: 10px; /* Reduce gap between links */
+    position: absolute;
+    top: 70px; /* Adjust the top position as needed */
+    left: 0;
+    background-color: #111; /* Add a background color */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 3px;
+    z-index: 1;
+    width: 100%; /* Full width */
+    height: 100vh;
+    transition: all 1s ease;
+  }
+
+  /* Show links when the menu is open */
+  .links.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    justify-content: space-between;
+    font-size: xx-large;
+  }
 }

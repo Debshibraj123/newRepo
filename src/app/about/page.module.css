@@ -14,10 +14,10 @@
 
 .imgText {
   position: absolute;
-  bottom: 20px;
+  bottom: 2px;
   left: 20px;
   background-color: #53c28b;
-  padding: 5px;
+  padding: 3px;
   color: white;
 }
 
@@ -38,4 +38,28 @@
   font-size: 18px;
   font-weight: 300;
   text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+  }
+  
+  .item {
+    flex: 1;
+    /* margin-top: 50px; */
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  
+  .desc {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: justify;
+    text-overflow: ellipsis;
+  }
 }

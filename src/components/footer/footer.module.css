@@ -16,3 +16,15 @@
   opacity: 0.6;
   cursor: pointer;
 }
+@media (max-width: 768px) { 
+   .container{
+    .container {
+      height: 20px;
+      font-size: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+   }
+}
